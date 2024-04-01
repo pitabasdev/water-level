@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Level</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      button {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10%; /* Make the button circular */
+        background-color: #3498db;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .yellow-btn {
+        background-color: yellow;
+      }
+
+      .red-btn {
+        background-color: red;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 600px) {
+        h1 {
+          font-size: 24px;
+        }
+        button {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img style="height: 300px;"
+      src="https://www.karikala.in/blog/wp-content/uploads/2022/05/4-2.jpg"
+      alt="Water Image"
+    />
+    <h1>Water Level: <%= waterLevel %>%</h1>
+    <% if (waterLevel == 100) { %>
+    <button class="yellow-btn">Water Full</button>
+    <% } else if (waterLevel == 0) { %>
+    <button class="red-btn">Water Empty</button>
+    <% } else { %>
+    <button>Water Level Normal</button>
+    <% } %>
+
+    <script>
+      setTimeout(function () {
+        location.reload();
+      }, 1000);
+    </script>
+  </body>
+</html>
