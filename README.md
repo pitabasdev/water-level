@@ -55,7 +55,7 @@ Follow these instructions to set up and run the project on your local machine.
 ### 📁 Project Structure
 
 ```
-iot-water-level-monitoring-system/
+water-level/
 ├── app.js
 ├── controllers/
 │   └── (controller files)
